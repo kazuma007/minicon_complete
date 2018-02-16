@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :purchases
+  has_many :favorites #User:Favorite => 1:多
+  has_many :events, through: :favorites
+  
 end

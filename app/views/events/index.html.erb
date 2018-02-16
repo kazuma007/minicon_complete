@@ -12,6 +12,7 @@
           <div class="six columns">
             <p class="ticket-price"><%= event.ticket_price %>円</p>
             <%= link_to 'Purchase', new_event_purchase_path(event), class: 'button button-primary' %>
+        <td><%= link_to "登録", add_event_path(event), method: :post %></td>    
           </div>
         </div>
       </card>
@@ -31,5 +32,9 @@
       <input class="u-full-width" type="text">
       <a class='button button-primary u-full-width'>Search</a>
     </card>
+    <card class="search-card">
+      <h4>Favorite</h4><br>
+     　<%= link_to 'Favorite Events', favorites_path %> 
+    </card>    
   </sidebar>
 </div>

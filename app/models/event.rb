@@ -1,6 +1,9 @@
 class Event < ApplicationRecord
   belongs_to :event_category
   has_many :purchases
+  has_many :favorites #User:Favorite => 1:多
+  has_many :users, through: :favorites
+  
   
   validates :event_category, :title, :location, :start_at, :ticket_price, :ticket_quantity, presence: true
   validates :title, length: { maximum: 80 }, uniqueness: true
